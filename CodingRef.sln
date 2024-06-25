@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStruct", "DataStruct", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DoubleLinkedList", "DoubleLinkedList\DoubleLinkedList.vcxproj", "{E84D829E-5ED8-4878-9A65-B242211766CA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Array", "Array\Array.vcxproj", "{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -33,12 +35,21 @@ Global
 		{E84D829E-5ED8-4878-9A65-B242211766CA}.Release|x64.Build.0 = Release|x64
 		{E84D829E-5ED8-4878-9A65-B242211766CA}.Release|x86.ActiveCfg = Release|Win32
 		{E84D829E-5ED8-4878-9A65-B242211766CA}.Release|x86.Build.0 = Release|Win32
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}.Debug|x64.ActiveCfg = Debug|x64
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}.Debug|x64.Build.0 = Debug|x64
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}.Debug|x86.ActiveCfg = Debug|Win32
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}.Debug|x86.Build.0 = Debug|Win32
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}.Release|x64.ActiveCfg = Release|x64
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}.Release|x64.Build.0 = Release|x64
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}.Release|x86.ActiveCfg = Release|Win32
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E84D829E-5ED8-4878-9A65-B242211766CA} = {C5BC661C-0075-4CA8-9BE2-BB6E2A2ABC92}
+		{9FD18DCF-E1BF-4538-8E29-9DB87DC43861} = {C5BC661C-0075-4CA8-9BE2-BB6E2A2ABC92}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D8600AF-059B-4036-AFC0-F6769C6EBB6F}
