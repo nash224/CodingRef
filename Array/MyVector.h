@@ -269,6 +269,8 @@ public:
 		{
 			mPtr[i] = NULL;
 		}
+
+		mSize = 0;
 	}
 
 	iterator begin()

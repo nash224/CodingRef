@@ -102,7 +102,7 @@ int main()
 
 		MyVector<int> Arr;
 
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 10000; i++)
 		{
 			Arr.push_front(i);
 			Display(Arr);
@@ -115,6 +115,9 @@ int main()
 		Arr.pop_front();
 		Display(Arr);
 		Arr.pop_front();
+		Display(Arr);
+
+		Arr.clear();
 		Display(Arr);
 	}
 
