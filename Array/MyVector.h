@@ -14,67 +14,10 @@ namespace my_math
 	}
 }
 
-template<typename T>
-class MyVectorIterator
-{
-	template<typename T>
-	friend class MyVector;
-
-private:
-	using size_type = int;
-
-public:
-	MyVectorIterator()
-	{
-
-	}
-
-	MyVectorIterator(size_type _iSize)
-	{
-		mIdx = _iSize;
-	}
-
-	~MyVectorIterator()
-	{
-
-	}
-
-public:
-	bool operator==(const MyVectorIterator& _Other) const
-	{
-		return mIdx == _Other.mIdx;
-	}
-	bool operator!=(const MyVectorIterator& _Other) const
-	{
-		return mIdx != _Other.mIdx;
-	}
-
-	MyVectorIterator operator+(int _iValue)
-	{
-		return MyVectorIterator(mIdx + _iValue);
-	}
-
-	void operator++()
-	{
-		++mIdx;
-	}
-
-	void operator++(int)
-	{
-		++mIdx;
-	}
-
-private:
-	size_type mIdx = 0;
-
-};
 
 template<typename T>
 class MyVector
 {
-public:
-	using iterator = MyVectorIterator<T>;
-
 private:
 	using size_type = int;
 
@@ -271,16 +214,6 @@ public:
 		}
 
 		mSize = 0;
-	}
-
-	iterator begin()
-	{
-		return iterator(0);
-	}
-
-	iterator end()
-	{
-		return iterator(mSize);
 	}
 
 private:

@@ -135,13 +135,6 @@ int main()
 		}
 
 		Display(Arr);
-
-		MyVector<int>::iterator StartIter = Arr.begin();
-		MyVector<int>::iterator EndIter = Arr.end();
-
-		for (; StartIter != EndIter; ++StartIter)
-		{
-		}
 	}
 }
 
