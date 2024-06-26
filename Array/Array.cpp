@@ -17,7 +17,7 @@ void Print(const std::string& _Text);
 
 int main()
 {
-	_CrtSetDbgFlag(_CRTDBG_CHECK_CRT_DF | _CRTDBG_ALLOC_MEM_DF);
+	_CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF | _CRTDBG_ALLOC_MEM_DF);
 
 	if (true)
 	{
@@ -102,7 +102,7 @@ int main()
 
 		MyVector<int> Arr;
 
-		for (int i = 0; i < 10000; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			Arr.push_front(i);
 			Display(Arr);
