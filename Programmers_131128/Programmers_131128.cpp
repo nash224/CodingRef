@@ -44,23 +44,22 @@ std::string GetAnswer(std::string& _X, std::string& _Y)
 
 	for (char Char = '9'; '0' <= Char; --Char)
 	{
-		const size_t FIRST_OF_XCHAR_NUMBER = XCopy.find_first_of(Char);
-		const size_t FIRST_OF_YCHAR_NUMBER = YCopy.find_first_of(Char);
+		const size_t FIRST_OF_XCHAR_OFFSET = XCopy.find_first_of(Char);
+		const size_t FIRST_OF_YCHAR_OFFSET = YCopy.find_first_of(Char);
 
-		if (std::string::npos == FIRST_OF_XCHAR_NUMBER || std::string::npos == FIRST_OF_YCHAR_NUMBER)
+		if (std::string::npos == FIRST_OF_XCHAR_OFFSET || std::string::npos == FIRST_OF_YCHAR_OFFSET)
 		{
 			continue;
 		}
 
-		const size_t LAST_OF_XCHAR_NUMBER = XCopy.find_last_of(Char);
-		const size_t LAST_OF_YCHAR_NUMBER = YCopy.find_last_of(Char);
+		const size_t LAST_OF_XCHAR_OFFSET = XCopy.find_last_of(Char);
+		const size_t LAST_OF_YCHAR_OFFSET = YCopy.find_last_of(Char);
 
-		int Index = 0;
-		int XOFFSET = static_cast<int>(LAST_OF_XCHAR_NUMBER - FIRST_OF_XCHAR_NUMBER + 1);
-		int YOFFSET = static_cast<int>(LAST_OF_YCHAR_NUMBER - FIRST_OF_YCHAR_NUMBER + 1);
-		int CharCount = std::min(YOFFSET, XOFFSET);
+		const int X_COUNT = static_cast<int>(LAST_OF_XCHAR_OFFSET - FIRST_OF_XCHAR_OFFSET + 1);
+		const int Y_COUNT = static_cast<int>(LAST_OF_YCHAR_OFFSET - FIRST_OF_YCHAR_OFFSET + 1);
+		const int CHARCOUNT = std::min(Y_COUNT, X_COUNT);
 
-		for (int i = 0; i < CharCount; i++)
+		for (int i = 0; i < CHARCOUNT; i++)
 		{
 			Answer.push_back(Char);
 		}
