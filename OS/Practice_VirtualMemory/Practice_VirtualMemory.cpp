@@ -19,8 +19,3 @@ int main()
 	std::cout << "Allocation Granularity :" << AllocGranularity / 1024 << "Kbyte \n"; // Allocation Granularity : 64Kbyte
 	return 1;
 }
-
-void Test()
-{
-	VirtualAlloc();
-}

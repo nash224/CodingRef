@@ -30,10 +30,11 @@ int main()
 	for (int i = 0; i < NUMBER_OF_THREADS; i++)
 	{
 		std::vector<int>::iterator StartIter = Resource.begin();
-		std::thread(InCrease, 
+		auto Object = std::thread(InCrease,
 			m, &Total, 
 			StartIter + ((TOTAL_COUNT / NUMBER_OF_THREADS) * i),
 			StartIter + ((TOTAL_COUNT / NUMBER_OF_THREADS) * (i + 1)));
+		Jobs.push_back(Object);
 	}
 
 	// Wait for Job End

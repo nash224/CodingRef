@@ -30,7 +30,7 @@ int main()
 	}
 
 	BOOL isSuccess = ConnectNamedPipe(hPipe, NULL) ? TRUE : (GetLastError() == ERROR_PIPE_CONNECTED);
-	if (true == isSuccess)
+	if (NULL == isSuccess)
 	{
 		CommToClient(hPipe);
 	}
