@@ -33,9 +33,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Programmers_12977", "Coding
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice_SpreadSheet", "Practice\Practice_SpreadSheet\Practice_SpreadSheet.vcxproj", "{A8C5FCD4-A552-44EB-8F7E-2AE2919CEA9F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BJ_17478", "BJ_17478\BJ_17478.vcxproj", "{340F3012-0077-4233-BA27-7EF416DD5BED}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BJ_17478", "CodingTest\BackJ\BJ_17478\BJ_17478.vcxproj", "{340F3012-0077-4233-BA27-7EF416DD5BED}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BJ_15649", "BackJ\BJ_15649\BJ_15649.vcxproj", "{38555DA7-59C9-4D4B-B8CD-CD76DCE13008}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BJ_15649", "CodingTest\BackJ\BJ_15649\BJ_15649.vcxproj", "{38555DA7-59C9-4D4B-B8CD-CD76DCE13008}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Programmers_92334", "CodingTest\Programmers\Programmers_92334\Programmers_92334.vcxproj", "{7D93A4A9-6439-484A-BE72-337A390BF5BD}"
 EndProject
@@ -76,7 +76,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChangeFlag", "ChangeFlag", 
 		Flag.txt = Flag.txt
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice_WeatherPrediction", "CPlusPlus\Practice_WeatherPrediction\Practice_WeatherPrediction.vcxproj", "{BB7503BE-082A-44A5-8978-3F006482475B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice_WeatherPrediction", "Practice\Practice_WeatherPrediction\Practice_WeatherPrediction.vcxproj", "{BB7503BE-082A-44A5-8978-3F006482475B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BJ_1182", "CodingTest\BackJ\BJ_1182\BJ_1182.vcxproj", "{40D1BD04-2CB4-4946-AA04-EFAAE947DC9E}"
 EndProject
