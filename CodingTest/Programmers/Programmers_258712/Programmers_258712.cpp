@@ -8,6 +8,26 @@
 #include <map>
 #include <sstream>
 
+// stringstream을 활용하여 특정 문자를 분리한다.
+std::pair<std::string, std::string>& Split(const std::string& _Input)
+{
+	static std::pair<std::string, std::string> Result;
+
+	std::stringstream ss(_Input);
+
+	// 결과를 받을 임시버퍼
+	static std::string Buffer;
+
+	// 띄어쓰기를 구분하여 버퍼에 문자열을 저장하고 peek 위치를 옮긴다
+	std::getline(ss, Buffer, ' ');
+	Result.first = Buffer;
+	std::getline(ss, Buffer, ' ');
+	Result.second = Buffer;
+
+	return Result;
+}
+
+
 // 선물을 많이 준 쪽이 1개 더 받는다.
 // 선물 받은 기록이 없거나, 받은 선물의 수가 같을 경우
 // 선물지수에 따라 누가 더 받을지 결정된다.
@@ -53,25 +73,6 @@ struct FUserInfo
 		return Result;
 	}
 };
-
-// stringstream을 활용하여 특정 문자를 분리한다.
-std::pair<std::string, std::string>& Split(const std::string& _Input)
-{
-	static std::pair<std::string, std::string> Result;
-
-	std::stringstream ss(_Input);
-
-	// 결과를 받을 임시버퍼
-	static std::string Buffer;
-
-	// 띄어쓰기를 구분하여 버퍼에 문자열을 저장하고 peek 위치를 옮긴다
-	std::getline(ss, Buffer, ' ');
-	Result.first = Buffer;
-	std::getline(ss, Buffer, ' ');
-	Result.second = Buffer;
-
-	return Result;
-}
 
 int solution(std::vector<std::string> friends, std::vector<std::string> gifts) 
 {
