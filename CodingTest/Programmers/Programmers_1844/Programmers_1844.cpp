@@ -2,10 +2,9 @@
 //
 
 #include <iostream>
-#include <algorithm>
 #include <vector>
 #include <list>
-#include <set>
+#include <memory>
 
 // maps는 n x m 크기의 게임 맵의 상태가 들어있는 2차원 배열
 // 0은 벽이 있는 자리, 1은 벽이 없는 자리
@@ -47,14 +46,13 @@ struct Int2
 
 Int2 Int2::ZERO;
 
-namespace map_info
-{
-	constexpr int PATH = 0;
-	constexpr int WALL = 1;
-}
-
 class CBoard
 {
+public:
+	static constexpr int PATH = 0;
+	static constexpr int WALL = 1;
+	static constexpr int NOT_FOUND = -1;
+
 public:
 	CBoard(const std::vector<std::vector<int>>& maps)
 		: mMap(maps)
@@ -68,7 +66,7 @@ public:
 		mWidth = static_cast<int>(mMap[0].size());
 	}
 
-	bool IsOut(const Int2& _Pos) const
+	bool RangeOut(const Int2& _Pos) const
 	{
 		if (_Pos.X < 0)
 		{
@@ -90,9 +88,9 @@ public:
 		return false;
 	}
 
-	bool IsBlock(const Int2& _Pos) const 
+	bool IsBlock(const Int2& _Pos) const
 	{
-		return IsOut(_Pos) || (map_info::WALL == mMap[_Pos.Y][_Pos.X]);
+		return RangeOut(_Pos) || (WALL == mMap[_Pos.Y][_Pos.X]);
 	}
 
 	int GetWidth() const { return mWidth; }
@@ -104,8 +102,6 @@ private:
 	int mHeight = 0;
 
 };
-
-constexpr int NOT_FOUND = -1;
 
 int solution(std::vector<std::vector<int>> maps)
 {

@@ -156,7 +156,7 @@ std::vector<FBox> Initialize(const std::vector<std::vector<std::string>>& park)
 
 int solution(std::vector<int> mats, std::vector<std::vector<std::string>> park) 
 {
-	int answer = 0;
+	int answer = -1;
 	if (true == mats.empty())
 	{
 		return -1;
@@ -166,7 +166,6 @@ int solution(std::vector<int> mats, std::vector<std::vector<std::string>> park)
 	const int MAT_SIZE = static_cast<int>(mats.size());
 	int CurIndex = 0;
 	int CurMat = mats.at(0);
-	answer = CurMat;
 
 	std::vector<FBox> Boxes = Initialize(park);
 
@@ -218,13 +217,14 @@ int solution(std::vector<int> mats, std::vector<std::vector<std::string>> park)
 					}
 
 					++CurIndex;
+					answer = CurMat;
+
 					if (MAT_SIZE <= CurIndex)
 					{
 						bEnd = true;
 						break;
 					}
 
-					answer = CurMat;
 					CurMat = mats.at(CurIndex);
 				}
 			}
