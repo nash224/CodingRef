@@ -174,6 +174,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Programmers_181188", "Codin
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Programmers_87390", "CodingTest\Programmers\Programmers_87390\Programmers_87390.vcxproj", "{3A70FB6F-FF53-47CF-BB5B-B1FF4564B9CE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Programmers_340211", "CodingTest\Programmers\Programmers_340211\Programmers_340211.vcxproj", "{B335C7C7-A46E-4A82-86B5-B7228E862C1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -718,6 +720,14 @@ Global
 		{3A70FB6F-FF53-47CF-BB5B-B1FF4564B9CE}.Release|x64.Build.0 = Release|x64
 		{3A70FB6F-FF53-47CF-BB5B-B1FF4564B9CE}.Release|x86.ActiveCfg = Release|Win32
 		{3A70FB6F-FF53-47CF-BB5B-B1FF4564B9CE}.Release|x86.Build.0 = Release|Win32
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A}.Debug|x64.ActiveCfg = Debug|x64
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A}.Debug|x64.Build.0 = Debug|x64
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A}.Debug|x86.ActiveCfg = Debug|Win32
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A}.Debug|x86.Build.0 = Debug|Win32
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A}.Release|x64.ActiveCfg = Release|x64
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A}.Release|x64.Build.0 = Release|x64
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A}.Release|x86.ActiveCfg = Release|Win32
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -801,6 +811,7 @@ Global
 		{DBC94657-4CA2-4748-85FE-43DD797D060D} = {00FF77C7-8AA2-474A-8821-E5D5C4858BBC}
 		{644885E6-8419-48E6-BDB5-30233E5F6114} = {DBC94657-4CA2-4748-85FE-43DD797D060D}
 		{3A70FB6F-FF53-47CF-BB5B-B1FF4564B9CE} = {DBC94657-4CA2-4748-85FE-43DD797D060D}
+		{B335C7C7-A46E-4A82-86B5-B7228E862C1A} = {441F5CE7-286C-47E0-9C8A-C99DB66D3629}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D8600AF-059B-4036-AFC0-F6769C6EBB6F}

@@ -57,6 +57,7 @@ public:
 		mWidth = static_cast<int>(_Map[0].size());
 	}
 
+	/* 맵 리소스에서 특정 문자열의 위치를 반환한다. */
 	Int2 Find(char _Char) const
 	{
 		for (int y = 0; y < mHeight; y++)
@@ -72,15 +73,17 @@ public:
 		return Int2::ERROR;
 	}
 
+	/* 너비 탐색을 통해 길찾기를 수행한다 */
 	int BFS(const Int2& _Pos, const Int2& _Target) const
 	{
+		// Queue에 담을 구조체 선언
 		struct FInfo
 		{
 			Int2 Pos;
 			int Cost;
 		};
 
-		std::queue<FInfo> Queue;
+		std::queue<FInfo> Pipe;
 		std::vector<std::vector<bool>> Visited;
 		Visited.resize(mHeight);
 		for (int i = 0; i < mHeight; i++)
@@ -88,13 +91,17 @@ public:
 			Visited[i].resize(mWidth);
 		}
 
-		Queue.push({_Pos, 0});
-		while (false == Queue.empty())
-		{
-			const Int2 CurPos = Queue.front().Pos;
-			const int Cost = Queue.front().Cost;
-			Queue.pop();
+		// 시작 점의 위치를 넣어줌
+		Pipe.push({_Pos, 0});
 
+		// 파이프가 아무것도 들어있지 않을때까지 반복한다.
+		while (false == Pipe.empty())
+		{
+			const Int2 CurPos = Pipe.front().Pos;
+			const int Cost = Pipe.front().Cost;
+			Pipe.pop();
+
+			// 4가지 방향 선언
 			static const Int2 Dirs[4] =
 			{
 				{-1, 0},
@@ -107,15 +114,19 @@ public:
 			for (const Int2& Dir : Dirs)
 			{
 				CheckPos = CurPos;
+
+				// 특정 방향으로 막힐때까지 위치를 갱신한다.
 				while (false == IsBlock(CheckPos + Dir))
 				{
 					CheckPos += Dir;
 				}
 
+				// 벽 앞까지 갱신된 위치가 방문했던 좌표라면 건너뛴다.
 				if (true == Visited[CheckPos.Y][CheckPos.X])
 				{
 					continue;
 				}
+				// 벽 앞까지 갱신된 위치가 방문했던 좌표라면 목표 위치라면 비용을 반환한다.
 				else if (_Target == CheckPos)
 				{
 					return Cost + 1;
@@ -123,7 +134,7 @@ public:
 				else
 				{
 					Visited[CheckPos.Y][CheckPos.X] = true;
-					Queue.push({CheckPos, Cost + 1});
+					Pipe.push({CheckPos, Cost + 1});
 				}
 			}
 		}
@@ -131,6 +142,7 @@ public:
 		return -1;
 	}
 
+	/* Block 처리를 수행한다. */
 	bool IsBlock(const Int2& _Pos) const
 	{
 		if (_Pos.X < 0 || mWidth <= _Pos.X)

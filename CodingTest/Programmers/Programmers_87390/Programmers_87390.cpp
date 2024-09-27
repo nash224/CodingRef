@@ -18,6 +18,7 @@ std::vector<int> solution(int n, long long left, long long right)
 	{
 		X = static_cast<int>(i % ARRAY_SIZE);
 		Y = static_cast<int>(i / ARRAY_SIZE);
+		// x,y의 최대값 삽입
 		NUM = (X < Y ? Y : X) + 1;
 		answer.push_back(NUM);
 	}
