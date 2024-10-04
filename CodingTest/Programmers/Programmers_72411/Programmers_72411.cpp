@@ -7,6 +7,10 @@
 #include <set>
 #include <algorithm>
 
+/* 
+* Combination을 구현하는 법은 for문으로 한계가 있기 때문에 
+* 재귀방식을 통해 모든 경우의 수를 반환한다. 
+*/
 void Recursive(const std::string& _Vec, std::string& _Buffer, int _Level, int _Count, std::vector<std::string>& _Result) 
 {
 	if (static_cast<int>(_Buffer.size()) == _Count)
@@ -23,6 +27,7 @@ void Recursive(const std::string& _Vec, std::string& _Buffer, int _Level, int _C
 	}
 }
 
+/* 중복되지 않고 순서가 정렬된 모든 경우의 수를 반환한다. */
 std::vector<std::string> Combination(const std::string& _Vec, int _Count) 
 {
 	std::vector<std::string> Result;
@@ -31,13 +36,12 @@ std::vector<std::string> Combination(const std::string& _Vec, int _Count)
 	return Result;
 }
 
-std::vector<std::string> FindCourse(const std::vector<std::string>& _Res, int _Count)
+std::vector<std::string> GetCourse(const std::vector<std::string>& _Res, int _Count)
 {
 	std::vector<std::string> Results;
 
-	std::set<std::string> AllCases;
-
 	// 모든 경우의 수
+	std::set<std::string> AllCases;
 	for (const std::string& Str : _Res)
 	{
 		std::vector<std::string> Cases = Combination(Str, _Count);
@@ -70,6 +74,7 @@ std::vector<std::string> FindCourse(const std::vector<std::string>& _Res, int _C
 			continue;
 		}
 
+		// 더 많이 시킨 메뉴가 존재하면 결과를 갱신한다.
 		if (TopValue < Count)
 		{
 			TopValue = Count;
@@ -96,9 +101,10 @@ std::vector<std::string> solution(std::vector<std::string> orders, std::vector<i
 		std::sort(Order.begin(), Order.end());
 	}
 
+	// 코스 개수별 최고의 조합을 찾아 넣는다.
 	for (int Count : course)
 	{
-		std::vector<std::string> Courses = FindCourse(orders, Count);
+		std::vector<std::string> Courses = GetCourse(orders, Count);
 		for (const std::string& Course : Courses)
 		{
 			answer.push_back(Course);

@@ -6,17 +6,25 @@
 #include <vector>
 #include <cmath>
 
-#define MAX static_cast<unsigned int>(-1) / 2;
+/* 컴파일 타임에 연산한 결과를 상수로 정의한다. */
+constexpr int MAX_INT = static_cast<int>(static_cast<unsigned int>(-1) / 2);
+#define MAX MAX_INT;
 
 int min(int _a, int _b)
 {
 	return (_a > _b ? _b : _a);
 }
 
+/**
+*	일반적인 원쿠션은 피타고라스 방정식으로 해결했으며 
+*	동일한 축에 존재하고 목표를 가로질러 원쿠션할 경우, 별도 처리를 수행했다.
+*	대각선이 될 경우는 거리상으로 평면보다 더 멀기 때문에 존재하지 않는다고 가정한다.
+* */
 int CalculateDistance(int _m, int _n, int _StartX, int _StartY, int _TargetX, int _TargetY)
 {
 	int Result = MAX;
 
+	// 동일한 X축에 존재하지 않을 경우
 	if (_StartX != _TargetX)
 	{
 		Result = min(Result, static_cast<int>(std::pow(_StartX - _TargetX, 2) + std::pow(_StartY + _TargetY, 2)));
@@ -24,6 +32,7 @@ int CalculateDistance(int _m, int _n, int _StartX, int _StartY, int _TargetX, in
 	}
 	else
 	{
+		// 동일한 X축에 존재하면서 목표가 위에 있을 경우
 		if (_StartY < _TargetY)
 		{
 			Result = min(Result, static_cast<int>(std::pow(_StartY + _TargetY, 2)));
@@ -34,6 +43,7 @@ int CalculateDistance(int _m, int _n, int _StartX, int _StartY, int _TargetX, in
 		}
 	}
 
+	// 동일한 Y축에 존재하지 않을 경우
 	if (_StartY != _TargetY)
 	{
 		Result = min(Result, static_cast<int>(std::pow(_StartX + _TargetX, 2) + std::pow(_StartY - _TargetY, 2)));
@@ -41,6 +51,7 @@ int CalculateDistance(int _m, int _n, int _StartX, int _StartY, int _TargetX, in
 	}
 	else
 	{
+		// 동일한 Y축에 존재하면서 목표가 오른쪽에 있을 경우
 		if (_StartX < _TargetX)
 		{
 			Result = min(Result, static_cast<int>(std::pow(_StartX + _TargetX, 2)));
