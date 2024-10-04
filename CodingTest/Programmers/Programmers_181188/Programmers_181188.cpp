@@ -29,7 +29,7 @@ int solution(std::vector<std::vector<int>> targets)
 	for (const std::vector<int>& target : targets)
 	{
 		int s = target.at(0);
-		if (e < s)
+		if (e <= s)
 		{
 			e = target.at(1);
 			answer++;
